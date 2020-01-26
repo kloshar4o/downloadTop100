@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
     "ffmetadata": "^1.6.0",
     "ffmpeg": "0.0.4",
+    "request": "^2.88.0",
     "yt-search": "^0.4.1",
     "ytdl-core": "^1.0.5"
   }

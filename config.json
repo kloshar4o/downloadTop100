@@ -1,0 +1,20 @@
+{
+  "musicFolder": "Music",
+  "musicFolderAll": "All",
+  "playlists" : [
+    {
+      "tracksName": "Top 100 Moldova",
+      "appleLink": "https://music.apple.com/ru/playlist/top-100-moldova/pl.e4dcd4663130419bb03b80216dee9f57?l=en"
+    },
+    {
+      "tracksName": "Top 100 Global",
+      "appleLink": "https://music.apple.com/ru/playlist/top-100-global/pl.d25f5d1181894928af76c85c967f8f31?l=en"
+    }
+  ],
+  "blacklist": [
+    "MORGENSHTERN",
+    "Eminem",
+    "Scriptonite",
+    "Drake"
+  ]
+}
