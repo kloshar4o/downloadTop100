@@ -6,7 +6,7 @@ const sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const addMetaData = (place, name, artist, path) => {
+const addMetaData = (place, name, artist, path, callback) => {
 
     let data = {
         artist: artist,
@@ -16,7 +16,9 @@ const addMetaData = (place, name, artist, path) => {
 
     ffmetadata.write(path, data, function (err) {
         if (err) console.error("Error writing metadata", err);
-        else console.log("Data written");
+        else {
+            callback()
+        }
     });
 
 };
@@ -29,15 +31,17 @@ const convert = async (mp4Path, mp3Path, place, name, artist, trackPath, callbac
 
         await sleep(500);
 
-        await addMetaData(place, name, artist, mp3Path);
+        await addMetaData(place, name, artist, mp3Path, () => {
+
+            if (!fs.existsSync(trackPath)) {
+                fs.copyFile(mp3Path, trackPath, err => {if(err) console.log(err)});
+            }
+        });
 
         if (fs.existsSync(mp4Path)) {
             fs.unlink(mp4Path, err => {if(err) console.log(err)});
         }
 
-        if (!fs.existsSync(trackPath)) {
-            fs.copyFile(mp3Path, trackPath, err => {if(err) console.log(err)});
-        }
 
         callback();
 

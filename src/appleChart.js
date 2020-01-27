@@ -22,8 +22,8 @@ const get = async (url) => {
     let clean = function(string){
         return string
             .replace(/[&]/g, 'And')
-            .replace(/[?]/g, '')
-            .replace(/['"/]+/g, '');
+            .replace(/[$]/g, 'S')
+            .replace(/['"?*/]+/g, '');
     };
 
     for (let i = 0; i < tracks.length; i++) {

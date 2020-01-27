@@ -212,7 +212,7 @@ const download = (place, name, artist, fileName, musicPath, musicPathAll, goNext
 
         let track = `${artist} - ${name}`;
         let top100Path = musicPath + `${place}. ${track}`;
-        let trackPath = musicPathAll + `${place}. ${track}.mp3`;
+        let trackPath = musicPathAll + `${track}.mp3`;
         let mp3Path = `${top100Path}.mp3`;
         let mp4Path = `${top100Path}.mp4`;
 

@@ -21,7 +21,7 @@ const init = async (playlist) => {
     let sep = path.sep;
 
     let musicPath = homeDir + sep + musicFolder + sep + tracksName + sep;
-    let musicPathAll = musicPath + musicFolderAll + sep;
+    let musicPathAll = homeDir + sep + musicFolder + sep + musicFolderAll + sep;
 
 
     if (!fs.existsSync(musicPath)) {
@@ -36,6 +36,7 @@ const init = async (playlist) => {
 
     const downloadTrack = ({place, name, artist, fileName}) => {
         let nextTrack = downloadList.shift();
+
 
 
         if (blacklist.includes(artist)) {
@@ -63,5 +64,3 @@ let firstPlaylist = config.playlists.shift();
 
 init(firstPlaylist);
 
-
-//getTracksFromApple(() => {});
